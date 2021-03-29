@@ -1,17 +1,42 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import AppMarkdown from './markdown/analyze-monitor/analyze-monitor.md';
+import AnalyzeMarkdown from './markdown/analyze-monitor/analyze-monitor.md';
+import AboutMarkdown from './markdown/about/about.md';
+import OrganizeMarkdown from './markdown/organize/organize.md';
+import CollectMarkdown from './markdown/collect/collect.md';
 import gfm from 'remark-gfm'
+import {
+    Tabs,
+    Tab,
+} from 'carbon-components-react';
 
 class EmployeeAttritionBuild extends Component {
     constructor() {
         super();
-        this.state = { markdown: '' };
+        this.state = {
+            about_markdown: '',
+            analyze_markdown: '',
+            collect_markdown: '',
+            organize_markdown: ''
+        };
+        this.props = {
+            tabs: {
+                selected: 0,
+                role: 'navigation',
+            },
+            tab: {
+                role: 'presentation',
+                tabIndex: 0,
+            },
+        };
     }
 
     componentWillMount() {
         // Get the contents from the Markdown file and put them in the React state, so we can reference it in render() below.
-        fetch(AppMarkdown).then(res => res.text()).then(text => this.setState({ markdown: text }));
+        fetch(AboutMarkdown).then(res => res.text()).then(text => this.setState({ about_markdown: text }));
+        fetch(AnalyzeMarkdown).then(res => res.text()).then(text => this.setState({ analyze_markdown: text }));
+        fetch(CollectMarkdown).then(res => res.text()).then(text => this.setState({ collect_markdown: text }));
+        fetch(OrganizeMarkdown).then(res => res.text()).then(text => this.setState({ organize_markdown: text }));
     }
 
     render() {
@@ -19,8 +44,45 @@ class EmployeeAttritionBuild extends Component {
         return (
             <div className="bx--grid">
                 <div className="bx--row">
-                    <div className="bx--col-max">
-                        <ReactMarkdown plugins={[gfm]} children={markdown} />
+                    <div className="bx--col">
+                        <Tabs {...this.props.tabs}>
+                            <Tab {...this.props.tab} label="About">
+                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
+                                    <div className="bx--row landing-page__tab-content">
+                                        <div className="bx--col">
+                                            <ReactMarkdown plugins={[gfm]} children={this.state.about_markdown} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Tab>
+                            <Tab {...this.props.tab} label="Collect">
+                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
+                                    <div className="bx--row landing-page__tab-content">
+                                        <div className="bx--col">
+                                            <ReactMarkdown plugins={[gfm]} children={this.state.collect_markdown} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Tab>
+                            <Tab {...this.props.tab} label="Organize">
+                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
+                                    <div className="bx--row landing-page__tab-content">
+                                        <div className="bx--col">
+                                            <ReactMarkdown plugins={[gfm]} children={this.state.organize_markdown} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Tab>
+                            <Tab {...this.props.tab} label="Analyze/Monitor">
+                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
+                                    <div className="bx--row landing-page__tab-content">
+                                        <div className="bx--col">
+                                            <ReactMarkdown plugins={[gfm]} children={this.state.analyze_markdown} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Tab>
+                        </Tabs>
                     </div>
                 </div>
             </div>
