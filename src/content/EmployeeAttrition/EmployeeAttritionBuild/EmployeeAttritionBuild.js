@@ -39,6 +39,13 @@ class EmployeeAttritionBuild extends Component {
         fetch(OrganizeMarkdown).then(res => res.text()).then(text => this.setState({ organize_markdown: text }));
     }
 
+    transformURI(uri, newDir) {
+        uri = uri.replace('./img/media/', '');
+        uri = uri.replace('./img/', '');
+        uri = uri.replace('./media/', '');
+        return (`${newDir}/${uri}`);
+    }
+
     render() {
         const { markdown } = this.state;
         return (
@@ -77,7 +84,9 @@ class EmployeeAttritionBuild extends Component {
                                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                                     <div className="bx--row landing-page__tab-content">
                                         <div className="bx--col">
-                                            <ReactMarkdown plugins={[gfm]} children={this.state.analyze_markdown} />
+                                            <ReactMarkdown plugins={[gfm]}
+                                                           transformImageUri={uri => this.transformURI(uri, './img/employee-attrition/build/analyze-monitor')}
+                                                           children={this.state.analyze_markdown} />
                                         </div>
                                     </div>
                                 </div>
