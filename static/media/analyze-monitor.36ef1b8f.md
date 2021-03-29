@@ -9,7 +9,8 @@ Text here
 Not code here
 
 --------
-
+![logo](./img/logo512.png)
+----
 [title](https://www.example.com)
 
 | Syntax | Description |
