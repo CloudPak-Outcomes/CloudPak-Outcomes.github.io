@@ -467,39 +467,26 @@ Description automatically generated](./img/media/image53.png)
 
 3.  Click to select the JSON type of input
 
-> {"input\_data": \[{"fields":
->
-> \["CURRENT\_YEAR","EMPLOYEE\_CODE","POSITION\_CODE",
->
-> "DEPARTMENT\_CODE","DAYS\_WITH\_COMPANY","COMMUTE\_TIME",
->
-> "AGE\_BEGIN\_PERIOD","GENDER\_CODE","PERIOD\_TOTAL\_DAYS",
->
-> "STARTING\_SALARY","ENDING\_SALARY","NB\_INCREASES",
->
-> "BONUS","NB\_BONUS", "VACATION\_DAYS\_TAKEN",
->
-> "SICK\_DAYS\_TAKEN","PROMOTIONS","NB\_MANAGERS",
->
-> "DAYS\_IN\_POSITION","DAYS\_SINCE\_LAST\_RAISE","RANKING\_CODE",
->
-> "OVERTIME","DBLOVERTIME","TRAVEL"\],
->
-> "values":
->
-> \[\[2020,10013,5300,390,2430,21,46,1,180,
->
-> 105384.62,105384.62,0,2107.6924,1,9.0,
->
-> 6.5,0,1,2430,240,2,0.0,0.0,0.0\]\]
->
-> }\]}
+`{"input_data": [{"fields":
+["CURRENT_YEAR","EMPLOYEE_CODE","POSITION_CODE",
+"DEPARTMENT_CODE","DAYS_WITH_COMPANY","COMMUTE_TIME",
+"AGE_BEGIN_PERIOD","GENDER_CODE","PERIOD_TOTAL_DAYS",
+"STARTING_SALARY","ENDING_SALARY","NB_INCREASES",
+"BONUS","NB_BONUS", "VACATION_DAYS_TAKEN",
+"SICK_DAYS_TAKEN","PROMOTIONS","NB_MANAGERS",
+"DAYS_IN_POSITION","DAYS_SINCE_LAST_RAISE","RANKING_CODE",
+"OVERTIME","DBLOVERTIME","TRAVEL"],
+"values":
+[[2020,10013,5300,390,2430,21,46,1,180,
+105384.62,105384.62,0,2107.6924,1,9.0,
+6.5,0,1,2430,240,2,0.0,0.0,0.0]]
+}]}`
 
 4.  Enter the JSON text above into the input field, making sure to erase
     anything that was there before.  
     Note that the input data includes fields like CURRENT\_YEAR and
     EMPLOYEE\_CODE that were removed in the modeling. The model is a
-    pipeline that takes the original input and removed the undesired
+    pipeline that takes the original input and removes the undesired
     fields. This is why these fields are still there.
 
 5.  Click Predict  
