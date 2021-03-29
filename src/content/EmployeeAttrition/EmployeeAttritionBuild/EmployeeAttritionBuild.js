@@ -56,7 +56,7 @@ class EmployeeAttritionBuild extends Component {
                             <Tab {...this.props.tab} label="About">
                                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                                     <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col">
+                                        <div className="bx--col tutorial-content">
                                             <ReactMarkdown plugins={[gfm]} children={this.state.about_markdown} />
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@ class EmployeeAttritionBuild extends Component {
                             <Tab {...this.props.tab} label="Collect">
                                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                                     <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col">
+                                        <div className="bx--col tutorial-content">
                                             <ReactMarkdown plugins={[gfm]} children={this.state.collect_markdown} />
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@ class EmployeeAttritionBuild extends Component {
                             <Tab {...this.props.tab} label="Organize">
                                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                                     <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col">
+                                        <div className="bx--col tutorial-content">
                                             <ReactMarkdown plugins={[gfm]} children={this.state.organize_markdown} />
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@ class EmployeeAttritionBuild extends Component {
                             <Tab {...this.props.tab} label="Analyze/Monitor">
                                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                                     <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col">
+                                        <div className="bx--col tutorial-content">
                                             <ReactMarkdown plugins={[gfm]}
                                                            transformImageUri={uri => this.transformURI(uri, './img/employee-attrition/build/analyze-monitor')}
                                                            children={this.state.analyze_markdown} />
