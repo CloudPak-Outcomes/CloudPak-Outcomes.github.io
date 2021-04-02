@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
     Header,
     HeaderContainer,
@@ -7,6 +7,7 @@ import {
     HeaderMenuButton,
     HeaderMenuItem,
     HeaderGlobalBar,
+    HeaderPanel,
     HeaderGlobalAction,
     SkipToContent,
     SideNav,
@@ -14,39 +15,77 @@ import {
     SideNavMenu,
     SideNavMenuItem,
     HeaderSideNavItems,
+    Switcher,
+    SwitcherItem,
+    SwitcherDivider
 } from 'carbon-components-react';
+import { AppSwitcher20 } from '@carbon/icons-react';
 import { Link } from 'react-router-dom';
 
-const OutcomesHeader = () => (
-    <HeaderContainer
-        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-            <Header aria-label="Cloud Pak for Data Outcomes">
-                <SkipToContent />
-                <HeaderMenuButton
-                    aria-label="Open menu"
-                    onClick={onClickSideNavExpand}
-                    isActive={isSideNavExpanded}
-                />
-                <HeaderName element={Link} to="/" prefix="IBM">
-                    CloudPak for Data Outcomes
-                </HeaderName>
-                <SideNav aria-label="Outcomes navigation" isFixedNav expanded={true}>
-                    <SideNavItems>
-                        <SideNavMenu title="Employee Attrition">
-                            <SideNavMenuItem element={Link} to='/employee-attrition'>About</SideNavMenuItem>
-                            <SideNavMenuItem element={Link} to='/employee-attrition/demo'>Demo it</SideNavMenuItem>
-                            <SideNavMenuItem element={Link} to='/employee-attrition/build'>Build it</SideNavMenuItem>
-                        </SideNavMenu>
-                        <SideNavMenu title="Mortgage Default">
-                            <SideNavMenuItem>About</SideNavMenuItem>
-                            <SideNavMenuItem>Demo it</SideNavMenuItem>
-                            <SideNavMenuItem>Build it</SideNavMenuItem>
-                        </SideNavMenu>
-                    </SideNavItems>
-                </SideNav>
-            </Header>
-        )}
-    />
-);
+class OutcomesHeader extends Component {
+    constructor() {
+        super();
+        this.state = {
+            switcher_expanded: false,
+        };
+    };
+
+    app_switch_click = () => {
+        this.setState({ switcher_expanded: !this.state.switcher_expanded })
+    }
+
+    hide_switcher = () => {
+        console.log('here');
+        this.setState({switcher_expanded: false});
+    }
+
+    render() {
+        return (
+            <HeaderContainer
+                render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+                    <Header aria-label="Cloud Pak for Data Outcomes">
+                        <SkipToContent />
+                        <HeaderMenuButton
+                            aria-label="Open menu"
+                            onClick={onClickSideNavExpand}
+                            isActive={isSideNavExpanded}
+                        />
+                        <HeaderName element={Link} to="/" prefix="IBM">
+                            CloudPak for Data Outcomes
+                        </HeaderName>
+                        <HeaderGlobalBar>
+                            <HeaderGlobalAction
+                                aria-label="Switch Demos"
+                                isActive
+                                onClick={this.app_switch_click}
+                                tooltipAlignment="end">
+                                <AppSwitcher20 />
+                            </HeaderGlobalAction>
+                        </HeaderGlobalBar>
+                        <HeaderPanel aria-label="Demos" expanded={this.state.switcher_expanded}>
+                            <Switcher aria-label="Switcher Container">
+                                <SwitcherItem
+                                    aria-label="Employee Attrition"
+                                    element={Link}
+                                    to="/employee-attrition"
+                                    onClick={this.hide_switcher} >
+                                    Employee Attrition
+                                </SwitcherItem>
+                                <SwitcherDivider />
+                                <SwitcherItem
+                                    aria-label="Mortgage Default"
+                                    element={Link}
+                                    to="/mortgage-default"
+                                    onClick={this.hide_switcher} >
+                                    Mortgage Default
+                                </SwitcherItem>
+                            </Switcher>
+                        </HeaderPanel>
+                    </Header>
+                )}
+            />
+        );
+    }
+}
 
 export default OutcomesHeader;

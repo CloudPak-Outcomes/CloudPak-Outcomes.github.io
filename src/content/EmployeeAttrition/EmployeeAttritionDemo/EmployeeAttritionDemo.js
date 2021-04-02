@@ -10,7 +10,7 @@ import {
     Tab,
 } from 'carbon-components-react';
 
-class EmployeeAttritionBuild extends Component {
+class EmployeeAttritionDemo extends Component {
     constructor() {
         super();
         this.state = {
@@ -99,4 +99,4 @@ class EmployeeAttritionBuild extends Component {
     }
 }
 
-export default EmployeeAttritionBuild;
+export default EmployeeAttritionDemo;

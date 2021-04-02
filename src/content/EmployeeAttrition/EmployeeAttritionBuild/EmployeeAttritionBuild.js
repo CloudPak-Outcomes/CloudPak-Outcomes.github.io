@@ -1,97 +1,66 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
-import AnalyzeMarkdown from './markdown/analyze-monitor/analyze-monitor.md';
-import AboutMarkdown from './markdown/about/about.md';
-import OrganizeMarkdown from './markdown/organize/organize.md';
-import CollectMarkdown from './markdown/collect/collect.md';
-import gfm from 'remark-gfm'
 import {
-    Tabs,
-    Tab,
+    ClickableTile,
+    Breadcrumb,
+    BreadcrumbItem
 } from 'carbon-components-react';
 
 class EmployeeAttritionBuild extends Component {
     constructor() {
         super();
-        this.state = {
-            about_markdown: '',
-            analyze_markdown: '',
-            collect_markdown: '',
-            organize_markdown: ''
-        };
-        this.props = {
-            tabs: {
-                selected: 0,
-                role: 'navigation',
-            },
-            tab: {
-                role: 'presentation',
-                tabIndex: 0,
-            },
-        };
-    }
-
-    componentWillMount() {
-        // Get the contents from the Markdown file and put them in the React state, so we can reference it in render() below.
-        fetch(AboutMarkdown).then(res => res.text()).then(text => this.setState({ about_markdown: text }));
-        fetch(AnalyzeMarkdown).then(res => res.text()).then(text => this.setState({ analyze_markdown: text }));
-        fetch(CollectMarkdown).then(res => res.text()).then(text => this.setState({ collect_markdown: text }));
-        fetch(OrganizeMarkdown).then(res => res.text()).then(text => this.setState({ organize_markdown: text }));
-    }
-
-    transformURI(uri, newDir) {
-        uri = uri.replace('./img/media/', '');
-        uri = uri.replace('./img/', '');
-        uri = uri.replace('./media/', '');
-        return (`${newDir}/${uri}`);
     }
 
     render() {
-        const { markdown } = this.state;
         return (
             <div className="bx--grid">
                 <div className="bx--row">
                     <div className="bx--col">
-                        <Tabs {...this.props.tabs}>
-                            <Tab {...this.props.tab} label="About">
-                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
-                                    <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col tutorial-content">
-                                            <ReactMarkdown plugins={[gfm]} children={this.state.about_markdown} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </Tab>
-                            <Tab {...this.props.tab} label="Collect">
-                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
-                                    <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col tutorial-content">
-                                            <ReactMarkdown plugins={[gfm]} children={this.state.collect_markdown} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </Tab>
-                            <Tab {...this.props.tab} label="Organize">
-                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
-                                    <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col tutorial-content">
-                                            <ReactMarkdown plugins={[gfm]} children={this.state.organize_markdown} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </Tab>
-                            <Tab {...this.props.tab} label="Analyze/Monitor">
-                                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
-                                    <div className="bx--row landing-page__tab-content">
-                                        <div className="bx--col tutorial-content">
-                                            <ReactMarkdown plugins={[gfm]}
-                                                           transformImageUri={uri => this.transformURI(uri, './img/employee-attrition/build/analyze-monitor')}
-                                                           children={this.state.analyze_markdown} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </Tab>
-                        </Tabs>
+                        <Breadcrumb>
+                            <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
+                            <BreadcrumbItem href="/#/employee-attrition">Employee Attrition</BreadcrumbItem>
+                        </Breadcrumb>
+                        <h2>Build It: Employee Attrition</h2>
+                    </div>
+                </div>
+                <div className="bx--row">
+                    <div className="bx--col">
+                        <p>
+                            The sections below contain instructions and code samples for you to replicate
+                            the Employee Attrition demo environment on a Cloud Pak for Data cluster.
+                        </p>
+                    </div>
+                </div>
+                <div className="bx--row">
+                    <div className="bx--col-lg-4">
+                        <ClickableTile>
+                            <h4>Collect</h4>
+                            <hr />
+                            <p>
+                                Cognos Analytics, dashboards, database connections.
+                            </p>
+                        </ClickableTile>
+                    </div>
+                    <div className="bx--col-lg-4">
+                        <ClickableTile>
+                            <h4>Organize</h4>
+                            <hr />
+                            <p>
+                                Data refinery, roles, permissions, etc.
+                            </p>
+                        </ClickableTile>
+                    </div>
+                    <div className="bx--col-lg-4">
+                        <ClickableTile href="#/employee-attrition/build/analyze-monitor">
+                            <h4>Analyze/Monitor</h4>
+                            <hr />
+                            <p>
+                                Deploy an employee attrition model into your environment. With <strong>
+                                Watson OpenScale</strong>, identify how changing employment conditions
+                                are affecting model accuracy. With <strong>AutoAI</strong> and <strong>
+                                Watson Studio</strong>, rapidly prototype a new model and run a
+                                head-to-head comparison between the production and challenger models.
+                            </p>
+                        </ClickableTile>
                     </div>
                 </div>
             </div>
