@@ -28,7 +28,7 @@ const EmployeeAttrition = () => {
             </div>
             <div className="bx--row">
                 <div className="bx--col-lg-6">
-                    <ClickableTile>
+                    <ClickableTile href="#/employee-attrition/demo-it">
                         <h4>Demo It</h4>
                         <hr />
                         <p>
@@ -39,7 +39,7 @@ const EmployeeAttrition = () => {
                     </ClickableTile>
                 </div>
                 <div className="bx--col-lg-6">
-                    <ClickableTile href="#/employee-attrition/build">
+                    <ClickableTile href="#/employee-attrition/build-it">
                         <h4>Build It</h4>
                         <hr />
                         <p>

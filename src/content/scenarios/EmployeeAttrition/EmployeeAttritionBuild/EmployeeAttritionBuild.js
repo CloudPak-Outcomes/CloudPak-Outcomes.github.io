@@ -6,8 +6,8 @@ import {
 } from 'carbon-components-react';
 
 class EmployeeAttritionBuild extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     render() {
@@ -32,7 +32,7 @@ class EmployeeAttritionBuild extends Component {
                 </div>
                 <div className="bx--row">
                     <div className="bx--col-lg-4">
-                        <ClickableTile>
+                        <ClickableTile href={`#${this.props.match.url}/collect`}>
                             <h4>Collect</h4>
                             <hr />
                             <p>
@@ -41,7 +41,7 @@ class EmployeeAttritionBuild extends Component {
                         </ClickableTile>
                     </div>
                     <div className="bx--col-lg-4">
-                        <ClickableTile>
+                        <ClickableTile href={`#${this.props.match.url}/organize`}>
                             <h4>Organize</h4>
                             <hr />
                             <p>
@@ -50,7 +50,7 @@ class EmployeeAttritionBuild extends Component {
                         </ClickableTile>
                     </div>
                     <div className="bx--col-lg-4">
-                        <ClickableTile href="#/employee-attrition/build/analyze-monitor">
+                        <ClickableTile href={`#${this.props.match.url}/analyze-monitor`}>
                             <h4>Analyze/Monitor</h4>
                             <hr />
                             <p>

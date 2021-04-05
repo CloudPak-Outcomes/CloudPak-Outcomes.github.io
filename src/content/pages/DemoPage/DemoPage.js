@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import AnalyzeMarkdown from '../markdown/analyze-monitor/analyze-monitor.md';
-import gfm from 'remark-gfm'
+import gfm from 'remark-gfm';
 import {
     SideNav,
     SideNavItems,
@@ -10,12 +9,26 @@ import {
 } from 'carbon-components-react';
 
 
-class AnalyzeMonitor extends Component {
-    constructor() {
-        super();
+class DemoPage extends Component {
+    constructor(props) {
+        super(props);
+
+        let path_array = this.props.match.url.split('/');
+        const crumbs = [
+            {
+                name: path_array[1].replace('-', ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase()),
+                url: path_array[1]
+            },
+            {
+                name: path_array[2].replace('-', ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase()),
+                url: `${path_array[1]}/${path_array[2]}`
+            }
+        ];
+
         this.state = {
             markdown: '',
-            sectionHeadings: []
+            sectionHeadings: [],
+            breadCrumbs: crumbs
         };
     }
 
@@ -23,16 +36,24 @@ class AnalyzeMonitor extends Component {
         ref.scrollIntoView({behavior: 'smooth'})
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // Get the contents from the Markdown file and put them in the React state, so we can reference it in render() below.
-        fetch(AnalyzeMarkdown).then(res => res.text()).then(text => this.setState({ markdown: text }));
+        const file = await import(`../../markdown${this.props.match.url}/demo.md`);
+        const response = await fetch(file.default);
+        const text = await response.text();
+
+        this.setState({
+            markdown: text
+        });
+
+
     }
 
-    transformURI(uri, newDir) {
+    transformURI(uri) {
         uri = uri.replace('./img/media/', '');
         uri = uri.replace('./img/', '');
         uri = uri.replace('./media/', '');
-        return (`${newDir}/${uri}`);
+        return (`/img/${this.props.match.url}/${uri}`);
     }
 
     parseHeading({ children }) {
@@ -101,15 +122,15 @@ class AnalyzeMonitor extends Component {
                         <div className="bx--col-lg-10 bx--offset-lg-2">
                             <Breadcrumb>
                                 <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
-                                <BreadcrumbItem href="/#/employee-attrition">Employee Attrition</BreadcrumbItem>
-                                <BreadcrumbItem href="/#/employee-attrition/build">Build It</BreadcrumbItem>
+                                <BreadcrumbItem href={`/#${this.state.breadCrumbs[0].url}`}>{this.state.breadCrumbs[0].name}</BreadcrumbItem>
+                                <BreadcrumbItem href={`/#${this.state.breadCrumbs[1].url}`}>{this.state.breadCrumbs[1].name}</BreadcrumbItem>
                             </Breadcrumb>
                         </div>
                     </div>
                     <div className="bx--row">
                         <div className="bx--col-lg-10 bx--offset-lg-2 tutorial-content">
                             <ReactMarkdown plugins={[gfm]}
-                                           transformImageUri={uri => this.transformURI(uri, './img/employee-attrition/build/analyze-monitor')}
+                                           transformImageUri={uri => this.transformURI(uri)}
                                            children={this.state.markdown}
                                            renderers={{
                                                code: (node) => {
@@ -132,4 +153,4 @@ class AnalyzeMonitor extends Component {
     }
 }
 
-export default AnalyzeMonitor;
+export default DemoPage;

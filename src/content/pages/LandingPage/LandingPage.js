@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {ClickableTile} from "carbon-components-react";
 
 const LandingPage = () => {

@@ -1,14 +1,14 @@
-import { Button, Content } from 'carbon-components-react';
-import React, { Component } from 'react';
+import { Content } from 'carbon-components-react';
+import React from 'react';
 import './index.scss';
 import './App.css';
 import OutcomesHeader from "./components/OutcomesHeader";
 import { Route, Switch } from 'react-router-dom';
-import LandingPage from './content/LandingPage';
-import EmployeeAttrition from './content/EmployeeAttrition';
-import EmployeeAttritionBuild from './content/EmployeeAttrition/EmployeeAttritionBuild';
-import AnalyzeMonitor from './content/EmployeeAttrition/EmployeeAttritionBuild/AnalyzeMonitor';
-import EmployeeAttritionDemo from './content/EmployeeAttrition/EmployeeAttritionDemo';
+import LandingPage from './content/pages/LandingPage';
+import EmployeeAttrition from './content/scenarios/EmployeeAttrition';
+import EmployeeAttritionBuild from './content/scenarios/EmployeeAttrition/EmployeeAttritionBuild';
+import DemoPage from './content/pages/DemoPage';
+import EmployeeAttritionDemo from './content/scenarios/EmployeeAttrition/EmployeeAttritionDemo';
 
 function App() {
     return (
@@ -25,9 +25,10 @@ function App() {
                             <Switch>
                                 <Route exact path="/" component={LandingPage} />
                                 <Route exact path="/employee-attrition" component={EmployeeAttrition} />
-                                <Route exact path="/employee-attrition/build" component={EmployeeAttritionBuild} />
-                                <Route exact path="/employee-attrition/build/analyze-monitor" component={AnalyzeMonitor} />
-                                <Route exact path="/employee-attrition/demo" component={EmployeeAttritionDemo} />
+                                <Route exact path="/employee-attrition/build-it" component={EmployeeAttritionBuild} />
+                                <Route path="/employee-attrition/build-it/:demo" component={DemoPage} />
+                                <Route exact path="/employee-attrition/demo-it" component={EmployeeAttritionDemo} />
+                                <Route path="/employee-attrition/demo-it/:demo" component={DemoPage} />
                             </Switch>
                         </Content>
                     </div>
