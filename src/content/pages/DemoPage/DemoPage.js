@@ -102,6 +102,7 @@ class DemoPage extends Component {
                     expanded={true}
                     isChildOfHeader={true}
                     aria-label="Contents"
+                    className="tutorial-nav"
                 >
                     <SideNavItems>
                         {sectionHeadings.map((section) => {

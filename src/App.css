@@ -23,3 +23,8 @@ div.tutorial-content code {
     background: #d8d8d8;
     padding:6px
 }
+
+.tutorial-nav .bx--side-nav__link-text {
+    overflow: visible !important;
+    white-space: pre-wrap !important;
+}
