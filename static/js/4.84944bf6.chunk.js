@@ -1,2 +1,0 @@
-(this["webpackJsonpoutcomes-app"]=this["webpackJsonpoutcomes-app"]||[]).push([[4],{200:function(e,p,s){"use strict";s.r(p),p.default=s.p+"static/media/demo.e42852be.md"}}]);
-//# sourceMappingURL=4.84944bf6.chunk.js.map
