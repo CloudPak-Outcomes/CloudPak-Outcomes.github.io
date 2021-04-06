@@ -33,7 +33,7 @@ class EmployeeAttritionDemo extends Component {
                 </div>
                 <div className="bx--row">
                     <div className="bx--col-lg-4">
-                        <ClickableTile>
+                        <ClickableTile href={`#${this.props.match.url}/collect`}>
                             <h4>Collect</h4>
                             <hr />
                             <p>
@@ -42,7 +42,7 @@ class EmployeeAttritionDemo extends Component {
                         </ClickableTile>
                     </div>
                     <div className="bx--col-lg-4">
-                        <ClickableTile>
+                        <ClickableTile href={`#${this.props.match.url}/organize`}>
                             <h4>Organize</h4>
                             <hr />
                             <p>
@@ -51,7 +51,7 @@ class EmployeeAttritionDemo extends Component {
                         </ClickableTile>
                     </div>
                     <div className="bx--col-lg-4">
-                        <ClickableTile href="#/employee-attrition/demo-it/analyze-monitor">
+                        <ClickableTile href={`#${this.props.match.url}/analyze-monitor`}>
                             <h4>Analyze/Monitor</h4>
                             <hr />
                             <p>
