@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import { coldarkCold } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {
     SideNav,
     SideNavItems,
     SideNavLink,
-    CodeSnippet, Breadcrumb, BreadcrumbItem
+    Breadcrumb,
+    BreadcrumbItem
 } from 'carbon-components-react';
 
 
@@ -43,10 +46,8 @@ class DemoPage extends Component {
         const text = await response.text();
 
         this.setState({
-            markdown: text
+            markdown: text.replace('```', '~~~').replace('`', '~~~')
         });
-
-
     }
 
     transformURI(uri) {
@@ -55,6 +56,7 @@ class DemoPage extends Component {
         uri = uri.replace('./media/', '');
         return (`/img/${this.props.match.url}/${uri}`);
     }
+
 
     parseHeading({ children }) {
         const { sectionHeadings } = this.state;
@@ -72,6 +74,18 @@ class DemoPage extends Component {
                         <div key={stringValue.replaceAll(' ', '_')} id={stringValue.replaceAll(' ', '_')} >
                             <h2>{child}</h2>
                         </div>
+                    );
+                })}
+            </div>
+        );
+    }
+
+    parseCode({ children }) {
+        return (
+            <div>
+                {children.map((child) => {
+                    return (
+                        <CodeSnippet>{child}</CodeSnippet>
                     );
                 })}
             </div>
@@ -134,12 +148,8 @@ class DemoPage extends Component {
                                            transformImageUri={uri => this.transformURI(uri)}
                                            children={this.state.markdown}
                                            renderers={{
-                                               code: (node) => {
-                                                   return (
-                                                       <CodeSnippet type="inline" feedback="Copied to clipboard">
-                                                           {node}
-                                                       </CodeSnippet>
-                                                   );
+                                               code: ({language, value}) => {
+                                                   return <SyntaxHighlighter wrapLines={true} style={coldarkCold} language={language} children={value} />
                                                },
                                                heading: (node) => {
                                                    return this.parseHeading(node);
