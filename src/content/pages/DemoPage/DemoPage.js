@@ -8,8 +8,9 @@ import {
     SideNavItems,
     SideNavLink,
     Breadcrumb,
-    BreadcrumbItem
+    BreadcrumbItem, SideNavDivider, SideNavHeader, SideNavItem, SideNavDetails
 } from 'carbon-components-react';
+import SideNavigation from "../../../components/SideNavigation";
 
 
 class DemoPage extends Component {
@@ -46,7 +47,7 @@ class DemoPage extends Component {
         const text = await response.text();
 
         this.setState({
-            markdown: text.replace('```', '~~~').replace('`', '~~~')
+            markdown: text.replaceAll('```', '~~~').replaceAll('`', '~~~')
         });
     }
 
@@ -80,18 +81,6 @@ class DemoPage extends Component {
         );
     }
 
-    parseCode({ children }) {
-        return (
-            <div>
-                {children.map((child) => {
-                    return (
-                        <CodeSnippet>{child}</CodeSnippet>
-                    );
-                })}
-            </div>
-        );
-    }
-
     clickHandler(e) {
         // handle clicks in the left nav. Carbon generates <a> tags to wrap the links which are
         // clickable, but don't have the innerHTML target we need, so we need to make sure that
@@ -119,6 +108,9 @@ class DemoPage extends Component {
                     className="tutorial-nav"
                 >
                     <SideNavItems>
+                        <SideNavigation/>
+                        <SideNavDivider/>
+                        <SideNavDetails title={"Tutorial Contents"}/>
                         {sectionHeadings.map((section) => {
                             return (
                                 <SideNavLink

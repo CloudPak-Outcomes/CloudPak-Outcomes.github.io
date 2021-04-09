@@ -9,7 +9,7 @@ const EmployeeAttrition = () => {
     return (
         <div className="bx--grid">
             <div className="bx--row">
-                <div className="bx--col">
+                <div className="bx--col bx--offset-lg-2">
                     <Breadcrumb>
                         <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                     </Breadcrumb>
@@ -17,7 +17,7 @@ const EmployeeAttrition = () => {
                 </div>
             </div>
             <div className="bx--row">
-                <div className="bx--col">
+                <div className="bx--col bx--offset-lg-2">
                     <p>
                         In this use case, we examine how the COVID-19 pandemic has affected an
                         electronics retailer. While increased online orders have bolstered sales,
@@ -27,7 +27,7 @@ const EmployeeAttrition = () => {
                 </div>
             </div>
             <div className="bx--row">
-                <div className="bx--col-lg-6">
+                <div className="bx--col-lg-5 bx--offset-lg-2">
                     <ClickableTile href="#/employee-attrition/demo-it">
                         <h4>Demo It</h4>
                         <hr />
@@ -38,7 +38,7 @@ const EmployeeAttrition = () => {
                         </p>
                     </ClickableTile>
                 </div>
-                <div className="bx--col-lg-6">
+                <div className="bx--col-lg-5">
                     <ClickableTile href="#/employee-attrition/build-it">
                         <h4>Build It</h4>
                         <hr />

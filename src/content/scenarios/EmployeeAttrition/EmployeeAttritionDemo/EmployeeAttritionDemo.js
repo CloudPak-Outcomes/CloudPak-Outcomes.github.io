@@ -14,7 +14,7 @@ class EmployeeAttritionDemo extends Component {
         return (
             <div className="bx--grid">
                 <div className="bx--row">
-                    <div className="bx--col">
+                    <div className="bx--col bx--offset-lg-2">
                         <Breadcrumb>
                             <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                             <BreadcrumbItem href="/#/employee-attrition">Employee Attrition</BreadcrumbItem>
@@ -23,7 +23,7 @@ class EmployeeAttritionDemo extends Component {
                     </div>
                 </div>
                 <div className="bx--row">
-                    <div className="bx--col">
+                    <div className="bx--col bx--offset-lg-2">
                         <p>
                             Follow the instructions below to register for access to a Cloud Pak for Data
                             cluster that has been pre-loaded with the Employee Attrition use case. Using
@@ -32,7 +32,7 @@ class EmployeeAttritionDemo extends Component {
                     </div>
                 </div>
                 <div className="bx--row">
-                    <div className="bx--col-lg-4">
+                    <div className="bx--col-lg-3 bx--offset-lg-2">
                         <ClickableTile href={`#${this.props.match.url}/collect`}>
                             <h4>Collect</h4>
                             <hr />
@@ -41,7 +41,7 @@ class EmployeeAttritionDemo extends Component {
                             </p>
                         </ClickableTile>
                     </div>
-                    <div className="bx--col-lg-4">
+                    <div className="bx--col-lg-3">
                         <ClickableTile href={`#${this.props.match.url}/organize`}>
                             <h4>Organize</h4>
                             <hr />
@@ -50,7 +50,7 @@ class EmployeeAttritionDemo extends Component {
                             </p>
                         </ClickableTile>
                     </div>
-                    <div className="bx--col-lg-4">
+                    <div className="bx--col-lg-3">
                         <ClickableTile href={`#${this.props.match.url}/analyze-monitor`}>
                             <h4>Analyze/Monitor</h4>
                             <hr />
