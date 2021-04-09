@@ -10,14 +10,15 @@ import {
     SkipToContent,
     Switcher,
     SwitcherItem,
-    SwitcherDivider
+    SwitcherDivider, SideNavItems, SideNav
 } from 'carbon-components-react';
 import { AppSwitcher20 } from '@carbon/icons-react';
 import { Link } from 'react-router-dom';
+import SideNavigation from "../SideNavigation";
 
 class OutcomesHeader extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             switcher_expanded: false,
         };
@@ -74,6 +75,11 @@ class OutcomesHeader extends Component {
                                 </SwitcherItem>
                             </Switcher>
                         </HeaderPanel>
+                        <SideNav>
+                            <SideNavItems>
+                                <SideNavigation />
+                            </SideNavItems>
+                        </SideNav>
                     </Header>
                 )}
             />
