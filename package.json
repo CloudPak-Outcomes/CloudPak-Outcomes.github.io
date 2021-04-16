@@ -6,6 +6,7 @@
   "dependencies": {
     "@carbon/colors": "^10.22.0",
     "@carbon/grid": "^10.23.0",
+    "@carbon/pictograms-react": "^11.8.0",
     "@carbon/themes": "^10.31.0",
     "@carbon/type": "^10.26.0",
     "@testing-library/jest-dom": "^5.11.4",

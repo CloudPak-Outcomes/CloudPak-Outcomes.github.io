@@ -13,5 +13,13 @@ h2.content-page__heading {
 
 p {
   @include carbon--type-style('body-long-02');
-  margin-bottom: 2rem;
+}
+
+a.bx--tile--clickable p {
+  color: $text-04;
+}
+
+a.bx--tile--clickable svg {
+  margin: auto;
+  display: block;
 }

@@ -15,7 +15,7 @@ const GettingStartedPage = () => {
                     <div className="bx--row">
                         <div className="bx--col-lg-10 bx--offset-lg-2">
                             <p>
-                                Contet here.
+                                Content here.
                             </p>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ const EmployeeAttrition = () => {
                     <Breadcrumb>
                         <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                     </Breadcrumb>
-                    <h2>Employee Attrition</h2>
+                    <h2 className="content-page__heading">Employee Attrition</h2>
                 </div>
             </div>
             <div className="bx--row">
@@ -28,7 +28,7 @@ const EmployeeAttrition = () => {
                 </div>
             </div>
             <div className="bx--row">
-                <div className="bx--col-lg-5 bx--offset-lg-2">
+                <div className="bx--col bx--offset-lg-2">
                     <ClickableTile href="#/employee-attrition/demo-it">
                         <h4>Demo It</h4>
                         <hr />
