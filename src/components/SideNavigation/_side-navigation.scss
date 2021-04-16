@@ -20,6 +20,10 @@ a.bx--side-nav__link > .bx--side-nav__link-text:hover {
   color: $ui-01;
 }
 
+button.bx--side-nav__submenu:hover {
+  color: $ui-01;
+}
+
 .bx--side-nav__navigation {
   background-color: $inverse-01;
   color: $text-02;
