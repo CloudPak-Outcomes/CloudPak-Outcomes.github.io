@@ -4,12 +4,9 @@ import {
     Breadcrumb,
     BreadcrumbItem
 } from 'carbon-components-react';
+import '../../../_content-page.scss';
 
 class EmployeeAttritionDemo extends Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <div className="bx--grid">
@@ -19,7 +16,7 @@ class EmployeeAttritionDemo extends Component {
                             <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                             <BreadcrumbItem href="/#/employee-attrition">Employee Attrition</BreadcrumbItem>
                         </Breadcrumb>
-                        <h2>Demo It: Employee Attrition</h2>
+                        <h2 className="content-page__heading">Demo It: Employee Attrition</h2>
                     </div>
                 </div>
                 <div className="bx--row">

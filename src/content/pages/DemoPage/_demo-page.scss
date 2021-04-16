@@ -10,6 +10,18 @@ div.tutorial-content h3, div.tutorial-content th, div.tutorial-content td {
 }
 
 div.tutorial-content img {
+  border: 1px solid $inverse-02;
+  margin-bottom: 3rem;
+}
+
+div.tutorial-content ul {
+  color: $ui-01;
+  list-style: square;
+  @include carbon--type-style('body-long-02');
+  padding-left: 2rem;
+}
+
+div.tutorial-content img {
   max-width: 100%;
 }
 
@@ -33,4 +45,16 @@ div.tutorial-content code {
 div.tutorial-content p {
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+div.dark-breadcrumbs a.bx--link:visited {
+  color: $interactive-01;
+}
+
+div.dark-breadcrumbs a.bx--link {
+  color: $interactive-01;
+}
+
+div.dark-breadcrumbs .bx--breadcrumb-item::after {
+  color: $ui-background;
 }

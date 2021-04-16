@@ -1,5 +1,4 @@
 import React from 'react';
-import {ClickableTile} from "carbon-components-react";
 import '../../_content-page.scss';
 import './_landing-page.scss';
 
@@ -9,7 +8,6 @@ const LandingPage = () => {
             <div className="bx--row landing-page__banner">
                 <div className="bx--col bx--offset-lg-2">
                     <h2 className="landing-page__heading">Cloud Pak for Data Outcomes</h2>
-
                 </div>
             </div>
             <div className="bx--row">

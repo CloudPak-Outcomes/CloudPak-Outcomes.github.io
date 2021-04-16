@@ -8,7 +8,10 @@ import {
     SideNavItems,
     SideNavLink,
     Breadcrumb,
-    BreadcrumbItem, SideNavDivider, SideNavHeader, SideNavItem, SideNavDetails
+    BreadcrumbItem,
+    SideNavDivider,
+    SideNavDetails,
+    SideNavFooter
 } from 'carbon-components-react';
 import SideNavigation from "../../../components/SideNavigation";
 import './_demo-page.scss';
@@ -123,11 +126,13 @@ class DemoPage extends Component {
                             );
                         })};
                     </SideNavItems>
+                    <SideNavFooter>
+                    </SideNavFooter>
 
                 </SideNav>
                 <div className="bx--grid tutorial-content">
                     <div className="bx--row">
-                        <div className="bx--col-lg-10 bx--offset-lg-2">
+                        <div className="bx--col-lg-10 bx--offset-lg-2 dark-breadcrumbs">
                             <Breadcrumb>
                                 <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                                 <BreadcrumbItem href={`/#${this.state.breadCrumbs[0].url}`}>{this.state.breadCrumbs[0].name}</BreadcrumbItem>
