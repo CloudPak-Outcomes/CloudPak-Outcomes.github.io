@@ -23,8 +23,8 @@ a.bx--tile--clickable h4 {
   color: $interactive-04;
 }
 
-a.bx--tile--clickable hr {
-  color: $interactive-04;
+a.bx--tile--clickable:visited hr {
+  color: $text-04;
 }
 
 a.bx--tile--clickable svg {
