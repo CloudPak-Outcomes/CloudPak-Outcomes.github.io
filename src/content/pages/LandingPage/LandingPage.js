@@ -1,7 +1,7 @@
 import React from 'react';
 import {ClickableTile} from "carbon-components-react";
 import '../../_content-page.scss';
-import './_landing-page.scss'
+import './_landing-page.scss';
 
 const LandingPage = () => {
     return (

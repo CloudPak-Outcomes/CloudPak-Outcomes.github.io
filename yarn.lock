@@ -1092,6 +1092,11 @@
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.22.0.tgz#470833b5862be984213658c7f06f83e4c8713959"
   integrity sha512-XJ7FZzNbRtGrgC4WK7G5RF9NvlscHoW3xg0DAZZxxumqcR3t7E9ARF78aNVjsATUA7+dEN54yQ0TM7WRSTTXlg==
 
+"@carbon/layout@^10.23.0":
+  version "10.23.0"
+  resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.23.0.tgz#7af99758abc780d1509ab109b0491bdd19623e9f"
+  integrity sha512-oO7okc7c7QPWpC0k6DeZFG219DWv4ioMYtgZ189rH81e8bjKIwc5uJh63uSZ9ITMI9+pvDu6hXaiHYIGsLza3w==
+
 "@carbon/telemetry@0.0.0-alpha.6":
   version "0.0.0-alpha.6"
   resolved "https://registry.yarnpkg.com/@carbon/telemetry/-/telemetry-0.0.0-alpha.6.tgz#1d11e64f310e98f32c3db0c55f02e047f2398087"
@@ -1124,6 +1129,14 @@
   dependencies:
     "@carbon/import-once" "^10.6.0"
     "@carbon/layout" "^10.22.0"
+
+"@carbon/type@^10.26.0":
+  version "10.26.0"
+  resolved "https://registry.yarnpkg.com/@carbon/type/-/type-10.26.0.tgz#e2e3bb7e676d6a18aebb9cff625cdacc3e9574cb"
+  integrity sha512-nZuybp7TEgV4vPApVa16O0kxnbfL8d0q3F9AYlf4m/rQicRSkY8hLukRpHcnOXVRjorNKkXuo+/KM0LtCBs5dQ==
+  dependencies:
+    "@carbon/import-once" "^10.6.0"
+    "@carbon/layout" "^10.23.0"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
