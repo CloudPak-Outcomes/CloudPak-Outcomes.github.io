@@ -1,0 +1,30 @@
+@import '../../index.scss';
+
+a.bx--side-nav__link > .bx--side-nav__link-text {
+  overflow: visible;
+  white-space: pre-wrap;
+  color: $text-02;
+}
+
+a.bx--side-nav__link > .bx--side-nav__link-text:hover {
+  color: $ui-01;
+}
+
+.bx--side-nav__submenu-title {
+  overflow: visible;
+  white-space: pre-wrap;
+  color: $text-02;
+}
+
+.bx--side-nav__submenu-title:hover {
+  color: $ui-01;
+}
+
+.bx--side-nav__navigation {
+  background-color: $inverse-01;
+  color: $text-02;
+}
+
+.bx--side-nav__title {
+  color: $text-02;
+}

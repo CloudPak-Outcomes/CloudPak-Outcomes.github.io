@@ -1,35 +1,25 @@
 import React from 'react';
 import {ClickableTile} from "carbon-components-react";
+import '../../_content-page.scss';
+import './_landing-page.scss'
 
 const LandingPage = () => {
     return (
-        <div className="bx--grid">
-            <div className="bx--row">
+        <div className="bx--grid bx--grid--full-width">
+            <div className="bx--row landing-page__banner">
                 <div className="bx--col bx--offset-lg-2">
-                    <h2>Cloud Pak for Data Outcomes</h2>
-                    <p>About the Outcomes info goes here.</p>
+                    <h2 className="landing-page__heading">Cloud Pak for Data Outcomes</h2>
+
                 </div>
             </div>
             <div className="bx--row">
                 <div className="bx--col">
                     <div className="bx--row">
-                        <div className="bx--col-lg-5 bx--offset-lg-2">
-                            <ClickableTile href="#/employee-attrition">
-                                <h4>Employee Attrition</h4>
-                                <hr />
-                                <p>
-                                    Description here.
-                                </p>
-                            </ClickableTile>
+                        <div className="bx--col-lg-3 bx--offset-lg-2">
+                            <p>What is Cloud Pak for Data?</p>
                         </div>
-                        <div className="bx--col-lg-5">
-                            <ClickableTile>
-                                <h4>Mortgage Default</h4>
-                                <hr />
-                                <p>
-                                    Description here.
-                                </p>
-                            </ClickableTile>
+                        <div className="bx--col-lg-7">
+                            <p>Answer here</p>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 import { Content } from 'carbon-components-react';
 import React from 'react';
-import './index.scss';
-import './App.css';
+import './app.scss';
 import OutcomesHeader from "./components/OutcomesHeader";
 import { Route, Switch } from 'react-router-dom';
 import LandingPage from './content/pages/LandingPage';
