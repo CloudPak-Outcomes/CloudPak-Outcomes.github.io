@@ -11,7 +11,7 @@ import {
     BreadcrumbItem, SideNavDivider, SideNavHeader, SideNavItem, SideNavDetails
 } from 'carbon-components-react';
 import SideNavigation from "../../../components/SideNavigation";
-
+import './_demo-page.scss';
 
 class DemoPage extends Component {
     constructor(props) {
@@ -116,6 +116,7 @@ class DemoPage extends Component {
                                 <SideNavLink
                                     key={`#${section.replaceAll(' ', '_')}`}
                                     onClick={this.clickHandler}
+                                    className="side-nav-text"
                                 >
                                     {section}
                                 </SideNavLink>
@@ -124,7 +125,7 @@ class DemoPage extends Component {
                     </SideNavItems>
 
                 </SideNav>
-                <div className="bx--grid">
+                <div className="bx--grid tutorial-content">
                     <div className="bx--row">
                         <div className="bx--col-lg-10 bx--offset-lg-2">
                             <Breadcrumb>

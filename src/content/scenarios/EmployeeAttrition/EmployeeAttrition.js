@@ -4,6 +4,7 @@ import {
     Breadcrumb,
     BreadcrumbItem
 } from 'carbon-components-react';
+import '../../_content-page.scss';
 
 const EmployeeAttrition = () => {
     return (
