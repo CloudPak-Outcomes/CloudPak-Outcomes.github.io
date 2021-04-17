@@ -227,7 +227,7 @@ Ensure all features are selected as training features and click **Next**.
 
 Use the dropdown to set the scoring method to **JSON payload**. Copy and paste the following into the contents box:
 
-`
+```
 [
 	{
 		"request": {
@@ -240,7 +240,7 @@ Use the dropdown to set the scoring method to **JSON payload**. Copy and paste t
 		}
 	}
 ]
-`
+```
 
 Click **Send now**. When the payload has been accepted, click **Next**.
 
@@ -278,7 +278,39 @@ You have successfully configured OpenScale monitoring for your challenger model.
 
 ## 6. Compare the production and challenger models
 
-Work in progress
+Now that you have configured the monitors for the challenger model, you can submit test data to evaluate model performance.
+
+Download the [test data](https://raw.githubusercontent.com/CloudPak-Outcomes/OpenScale-Data/main/Employee-Attrition/attrition_test_data_2020.csv) to your machine.
+
+From the model summary screen, click the blue **Actions** button and select **Evaluate now**.
+
+![Evaluate now](./img/evaluate_now.png)
+
+From the **Import test data** window, select **from CSV file** from the dropdown. Drag the **attrition\_test\_data\_2020.csv** file you just downloaded to the window or navigate to it on your machine.
+
+![Import test data](./img/from_csv.png)
+
+Click **Upload and evaluate**. OpenScale uploads the test data and evaluates it for accuracy and drift using the parameters you completed in the previous section. Note that these tests make take a few minutes to run. When the evaluations have finished, the results will appear on the dashboard.
+
+Take a moment to explore the results by clicking on the monitors. Note that, since this is a pre-production model, the most recent test results appear. For production models like the one we investigated earlier, evaluations are run regularly and the results are shown graphed over time intervals.
+
+When you are finished exploring, return to the model summary screen. Click the blue **Actions** button and select **Compare**.
+
+![Compare models](./img/compare.png)
+
+From the dropdown, select the **predictive attrition - 2018** model.
+
+![Model to compare](./img/model_to_compare.png)
+
+OpenScale loads the most recent test results for the two models and displays them side-by-side. This comparison can be run between any two models, allowing you to quickly evaluate multiple challenger models against each other and against the production model as well.
+
+Close the comparison window to return to the model summary. Note the other actions available from the blue **Actions** button. From here, you can view previous test results, see model information, mark the model as Approved for production, or re-configure the monitors.
+
+You can also download a nicely-formatted PDF report that contains the model details, results of the most recent tests, and explanations of how the test scores are calculated.
+
+![Download PDF](./img/download_pdf.png)
+
+When you are finished, return to the **Employee attrition** project.
 
 ## 7. Modeling exploration with Modeler Flows
 
