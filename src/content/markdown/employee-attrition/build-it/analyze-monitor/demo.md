@@ -453,7 +453,7 @@ View the models for the derived values by clicking **View Model**. The results w
 
 ![Model results](./img/model_results.png)
 
-In our case here, we see a small improvement with the use of derived values, a little less than 0.5%. We can then decide if the small improvement is worht pursuing or if other experiments are worthwhile. We can exit the modeler flow by simply clicking the project name. This completes the lab.
+In our case here, we see a small improvement with the use of derived values, a little less than 0.5%. We can then decide if the small improvement is worth pursuing or if other experiments are worthwhile. We can exit the modeler flow by simply clicking the project name. This completes the lab.
 
 ## Summary
 
