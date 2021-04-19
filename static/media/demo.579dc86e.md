@@ -280,7 +280,7 @@ You have successfully configured OpenScale monitoring for your challenger model.
 
 Now that you have configured the monitors for the challenger model, you can submit test data to evaluate model performance.
 
-Download the [test data](https://raw.githubusercontent.com/CloudPak-Outcomes/OpenScale-Data/main/Employee-Attrition/attrition_test_data_2020.csv) to your machine.
+Right click [this link](https://raw.githubusercontent.com/CloudPak-Outcomes/OpenScale-Data/main/Employee-Attrition/attrition_test_data_2020.csv) and save the file located here to your machine.
 
 From the model summary screen, click the blue **Actions** button and select **Evaluate now**.
 
@@ -314,7 +314,146 @@ When you are finished, return to the **Employee attrition** project.
 
 ## 7. Modeling exploration with Modeler Flows
 
-Working on it
+There are many options available in creating a model. The data we are using is divided in time peri-od and some records don’t cover the same number of days. Is it possible that by using rations of the number of days covered, we would get a better model?
+
+We can do this additional experimentation on modeling without any programming. For this, we use **Modeler Flows** (SPSS Modeler) to derive new attributes to see if this improves the modeling. To have a proper comparison, we create two sets of models. One with the original values and one with derived values. The following figure shows what we want to achieve.
+
+![Modeler flows outcome](./img/spss_outcome.png)
+
+Note that the table nodes are not connected. They are required only if we want to save and use the models. In our case, we only need to generate the models and see how they perform. Keep this figure in mind while going through the instructions.
+
+From within the project, click **Add to project**.
+
+![Add to project](./img/add_to_project.png)
+
+From the asset types, select **Modeler flow**.
+
+![Modeler flow](./img/asset_types.png)
+
+Name the flow **Testing Derived 2020** and click **Create**.
+
+Open the **Import** section of the palette, then drag and drop a **Data Asset** node onto the canvas.
+
+![Import data asset](./img/import_data_asset.png)
+
+Open the data asset.
+
+![Open data asset](./img/open_data_asset.png)
+
+Click **Change data asset**.
+
+![Change data asset](./img/change_data_asset.png)
+
+Click **Data assets**, then select **modeling_records_2020.csv**.
+
+Click **OK** and then **Save**.
+
+Open the **Field Operations** in the Palette, then drag and drop a **Filter** node onto the canvas.
+
+![Filter node](./img/filter_node.png)
+
+Connect the two operators.
+
+![Connect operators](./img/connect_operators.png)
+
+Open the **Filter** the same way we did the **Import** operator earlier.
+
+Click **Add Columns** and select the PERIOD\_TOTAL\_DAYS column.
+
+![Filter columns](./img/filter_columns.png)
+
+Click **OK**, then **Save**.
+
+Open the **Field Operations** in the Palette, then drag and drop a **Type** node onto the canvas.
+
+Connect the **Filter** node to the **Type** node.
+
+Open the **Type** node and change the ATTRITION type from **Continuous** to **Flag**, then click **Save**.
+
+![Attrition flag](./img/attrition_flag.png)
+
+Open the **Field Operations** in the Palette, then drag and drop an **Auto Classifier** node onto the canvas.
+
+![Auto classifier node](./img/auto_classifier_node.png)
+
+Connect the **Type** node to the **Auto Classifier** node, and open the **Auto Classifier** node.
+
+Click **Use custom field roles** and click **ATTRITION**.
+
+![Use custom field roles](./img/use_custom_field.png)
+
+Click **Add Columns**, and click the box next to **Field Names** to select all the fields.
+
+![Select all fields](./img/select_all_fields.png)
+
+Click **OK**, then **Save**. We have just completed a section that will create a model that is roughly equivalent to the AutoAI model we build in a previous step. Before we execute the flow, we will create a second model.
+
+Open the **Field Operations** in the Palette, then drag and drop a **Derive** node onto the canvas.
+
+Connect the **Input** node (the first node we created) to the **Derive** node and open the **Derive** node.
+
+![Connect the derive node](./img/connect_derive_node.png)
+
+Select **Multiple fields**.
+
+![Multiple fields](./img/multiple_fields.png)
+
+Click **Add Columns**, then select the following columns: BONUS, VACATION\_DAYS\_TAKEN, SICK\_DAYS\_TAKEN, OVERTIME, and DBLOVERTIME. Click **OK**.
+
+Scroll down the **Derive** window and enter the floowing case-sensitive formula in the **Expression** field:
+```
+@FIELD / PERIOD_TOTAL_DAYS
+```
+
+![Derive forumal](./img/derive_formula.png)
+
+Click **Save**.
+
+Drag a **Filter** node onto the canvas and connect the **Derive** node to it.
+
+Open the **Filter** node, click **Add Columns** and select the following fields: PERIOD\_TOTAL\_DAYS, BONUS, VACATION\_DAYS\_TAKEN, SICK\_DAYS\_TAKEN, OVERTIME, and DBLOVERTIME.
+
+Click **OK**, then **Save**.
+
+The next few steps are identical to the ones you performed on the previous model, starting with the **Type** node.
+
+Drag and drop a **Type** node on the the canvas. Connect the **Filter** node to the **Type** node.
+
+Change the ATTRITION type from **Continuous** to **Flag** and click **Save**.
+
+Open the **Field Operations** in the Palette, then drag and drop an **Auto Classifier** node onto the canvas.
+
+Connect the **Type** node to the **Auto Classifier** node.
+
+Open the **Auto Classifier** node, click **Use custom field roles** and click ATTRITION.
+
+Click **Add Columns**. Click the box next to **Field names** to select all fields. Click **OK** and **Save**.
+
+At this point, your flow should look like this:
+
+![Flow status](./img/flow_status.png)
+
+We are ready to create the models. Click **Run**.
+
+![Run](./img/run.png)
+
+Click **View Model**.
+
+![View model](./img/view_model.png)
+
+You should see something similar to the following:
+
+![Flow status 2](./img/flow_status_2.png)
+
+We now need to do the same with the second model node. Click **Testing Derived 2020**.
+
+![Testing Derived 2020](./img/testing_derived_2020.png)
+
+View the models for the derived values by clicking **View Model**. The results will be similar to the following figure:
+
+![Model results](./img/model_results.png)
+
+In our case here, we see a small improvement with the use of derived values, a little less than 0.5%. We can then decide if the small improvement is worht pursuing or if other experiments are worthwhile. We can exit the modeler flow by simply clicking the project name. This completes the lab.
 
 ## Summary
 
