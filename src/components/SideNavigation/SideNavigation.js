@@ -17,6 +17,11 @@ export default function SideNavigation() {
             </SideNavLink>
             <SideNavMenu title="Sales Demos">
                 <SideNavMenuItem>
+                    <SideNavLink href={`#/employee-attrition/demo-it`}>
+                        Employee Attrition
+                    </SideNavLink>
+                </SideNavMenuItem>
+                <SideNavMenuItem>
                     <SideNavLink href={`#/mortgage-default`}>
                         Mortgage Default
                     </SideNavLink>
@@ -24,7 +29,7 @@ export default function SideNavigation() {
             </SideNavMenu>
             <SideNavMenu title="Technical Labs">
                 <SideNavMenuItem>
-                    <SideNavLink href={`#/employee-attrition`}>
+                    <SideNavLink href={`#/employee-attrition/build-it`}>
                         Employee Attrition
                     </SideNavLink>
                 </SideNavMenuItem>
