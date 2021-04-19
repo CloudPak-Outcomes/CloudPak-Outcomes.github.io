@@ -6,6 +6,8 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from './content/pages/LandingPage';
 import OverviewPage from './content/pages/OverviewPage';
 import GettingStartedPage from "./content/pages/GettingStartedPage";
+import SalesDemosPage from "./content/pages/SalesDemosPage";
+import TechnicalLabsPage from "./content/pages/TechnicalLabsPage";
 import EmployeeAttrition from './content/scenarios/EmployeeAttrition';
 import EmployeeAttritionBuild from './content/scenarios/EmployeeAttrition/EmployeeAttritionBuild';
 import DemoPage from './content/pages/DemoPage';
@@ -27,6 +29,8 @@ function App() {
                                 <Route exact path="/" component={LandingPage} />
                                 <Route exact path="/overview" component={OverviewPage} />
                                 <Route exact path="/getting-started" component={GettingStartedPage} />
+                                <Route exact path="/sales-demos" component={SalesDemosPage} />
+                                <Route exact path="/technical-labs" component={TechnicalLabsPage} />
                                 <Route exact path="/employee-attrition" component={EmployeeAttrition} />
                                 <Route exact path="/employee-attrition/build-it" component={EmployeeAttritionBuild} />
                                 <Route path="/employee-attrition/build-it/:demo" component={DemoPage} />
