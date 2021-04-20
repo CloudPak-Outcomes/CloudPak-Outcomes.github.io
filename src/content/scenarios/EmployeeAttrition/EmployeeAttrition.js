@@ -11,7 +11,7 @@ const EmployeeAttrition = () => {
         <div className="bx--grid">
             <div className="bx--row">
                 <div className="bx--col bx--offset-lg-2">
-                    <Breadcrumb>
+                    <Breadcrumb className="breadcrumb">
                         <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                     </Breadcrumb>
                     <h2 className="content-page__heading">Employee Attrition</h2>

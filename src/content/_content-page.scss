@@ -32,3 +32,14 @@ a.bx--tile--clickable svg {
   display: block;
   color: $interactive-04;
 }
+
+nav.breadcrumb {
+  margin-top: -1rem;
+}
+
+div.show-banner {
+  background-image: url("./pages/img/banner-60.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 100% auto;
+}

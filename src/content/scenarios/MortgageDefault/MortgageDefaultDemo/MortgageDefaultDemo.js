@@ -11,7 +11,7 @@ import {
 } from "@carbon/pictograms-react";
 import '../../../_content-page.scss';
 
-class EmployeeAttritionBuild extends Component {
+class MortgageDefaultDemo extends Component {
     render() {
         return (
             <div className="bx--grid">
@@ -21,16 +21,17 @@ class EmployeeAttritionBuild extends Component {
                             <div className="bx--col">
                                 <Breadcrumb className="breadcrumb">
                                     <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
-                                    <BreadcrumbItem href="/#/technical-labs">Technical Labs</BreadcrumbItem>
+                                    <BreadcrumbItem href="/#/sales-demos">Sales Demos</BreadcrumbItem>
                                 </Breadcrumb>
-                                <h2 className="content-page__heading">Build It: Employee Attrition</h2>
+                                <h2 className="content-page__heading">Demo It: Mortgage Default</h2>
                             </div>
                         </div>
                         <div className="bx--row">
                             <div className="bx--col">
                                 <p>
-                                    The sections below contain instructions and code samples for you to replicate
-                                    the Employee Attrition demo environment on a Cloud Pak for Data cluster.
+                                    Follow the instructions below to register for access to a Cloud Pak for Data
+                                    cluster that has been pre-loaded with the Mortgage Default use case. Using
+                                    the provided scripts, you can demo the use case to clients.
                                 </p>
                             </div>
                         </div>
@@ -45,11 +46,11 @@ class EmployeeAttritionBuild extends Component {
                                             <h4>Analyze/Monitor</h4>
                                             <hr />
                                             <p>
-                                                Deploy an employee attrition model into your environment. With <strong>
-                                                Watson OpenScale</strong>, identify how changing employment conditions
-                                                are affecting model accuracy. With <strong>AutoAI</strong> and <strong>
-                                                Watson Studio</strong>, rapidly prototype a new model and run a
-                                                head-to-head comparison between the production and challenger models.
+                                                Evaluate an existing employee attrition model with <strong>Watson
+                                                OpenScale</strong> and discover issues with data drift. Explore
+                                                data engineering and rapid prototyping with <strong>AutoAI</strong>,
+                                                and run a head-to-head comparison between the production and
+                                                challenger models.
                                             </p>
                                         </div>
                                     </div>
@@ -99,4 +100,4 @@ class EmployeeAttritionBuild extends Component {
     }
 }
 
-export default EmployeeAttritionBuild;
+export default MortgageDefaultDemo;
