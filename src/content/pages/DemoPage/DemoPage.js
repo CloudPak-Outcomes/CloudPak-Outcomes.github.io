@@ -133,7 +133,7 @@ class DemoPage extends Component {
                 <div className="bx--grid tutorial-content">
                     <div className="bx--row">
                         <div className="bx--col-lg-10 bx--offset-lg-2 dark-breadcrumbs">
-                            <Breadcrumb>
+                            <Breadcrumb className="breadcrumb">
                                 <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                                 <BreadcrumbItem href={`/#${this.state.breadCrumbs[0].url}`}>{this.state.breadCrumbs[0].name}</BreadcrumbItem>
                                 <BreadcrumbItem href={`/#${this.state.breadCrumbs[1].url}`}>{this.state.breadCrumbs[1].name}</BreadcrumbItem>
