@@ -5,7 +5,7 @@ import {
     BreadcrumbItem
 } from 'carbon-components-react';
 import '../../_content-page.scss';
-import { HomeFront, IdBadge } from "@carbon/pictograms-react";
+import { HomeFront, EmployeeInsights } from "@carbon/pictograms-react";
 
 const SalesDemosPage = () => {
     return (
@@ -36,15 +36,15 @@ const SalesDemosPage = () => {
                             <ClickableTile href={`#/sales-demos/employee-attrition`}>
                                 <div className="bx--row">
                                     <div className="bx--col-lg-2">
-                                        <IdBadge/>
+                                        <EmployeeInsights/>
                                     </div>
                                     <div className="bx--col">
                                         <h4>Employee Attrition</h4>
                                         <hr />
                                         <p>
                                             A major electronics retailer is struggling with high employee
-                                            turnover, which is starting to impact their business. See how <strong>Watson Studio</strong>, <strong>AutoAI</strong>, and
-                                            <strong>Watson OpenScale</strong> combine to help them identify
+                                            turnover, which is starting to impact their business. See how <strong>Watson Studio</strong>, <strong>AutoAI</strong>,
+                                            and <strong>Watson OpenScale</strong> combine to help them identify
                                             issues with their current predictive models, and then rapidly
                                             prototype and evaluate an upgraded model.
                                         </p>

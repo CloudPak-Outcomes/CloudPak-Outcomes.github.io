@@ -15,6 +15,10 @@ p {
   @include carbon--type-style('body-long-02');
 }
 
+p + p {
+  margin-top: 1.5rem;
+}
+
 a.bx--tile--clickable p {
   color: $text-04;
 }
