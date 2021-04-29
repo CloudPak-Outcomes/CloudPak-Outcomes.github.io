@@ -23,7 +23,7 @@ class MortgageDefaultDemo extends Component {
                                     <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                                     <BreadcrumbItem href="/#/sales-demos">Sales Demos</BreadcrumbItem>
                                 </Breadcrumb>
-                                <h2 className="content-page__heading">Demo It: Mortgage Default</h2>
+                                <h2 className="content-page__heading">Demo: Mortgage Default</h2>
                             </div>
                         </div>
                         <div className="bx--row">

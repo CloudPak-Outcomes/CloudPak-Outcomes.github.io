@@ -19,11 +19,11 @@ const GettingStartedPage = () => {
                     <div className="bx--row">
                         <div className="bx--col">
                             <p>
-                                Cloud Pak for Data Outcomes is a central location for demos and
-                                technical labs. It includes instructions, code repositories, scripts,
-                                and other resources for IBM sellers and business partners looking
-                                to learn about solution capabilities, or access pre-built demo
-                                environments for customer engagements.
+                                To begin, IBM sellers and business partners should <a href="" target="_blank">
+                                register for access</a> to a Cloud Pak for Data Outcomes cluster. Once you
+                                have registered, use the left-hand navigation to select between the different <a href="/#/sales-demos">sales demos</a> and <a href="/#/technical-labs">
+                                technical labs</a>, where you will find step-by-step instructions for your
+                                chosen use case and set of capabilities.
                             </p>
                         </div>
                     </div>
