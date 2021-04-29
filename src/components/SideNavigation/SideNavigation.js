@@ -18,7 +18,7 @@ export default function SideNavigation() {
             <SideNavMenu title="Sales Demos">
                 <SideNavMenuItem>
                     <SideNavLink href={`#/sales-demos`}>
-                        Sales Demos Overview
+                        Overview
                     </SideNavLink>
                 </SideNavMenuItem>
                 <SideNavMenuItem>
@@ -35,7 +35,7 @@ export default function SideNavigation() {
             <SideNavMenu title="Technical Labs">
                 <SideNavMenuItem>
                     <SideNavLink href={`#/technical-labs`}>
-                        Technical Labs Overview
+                        Overview
                     </SideNavLink>
                 </SideNavMenuItem>
                 <SideNavMenuItem>

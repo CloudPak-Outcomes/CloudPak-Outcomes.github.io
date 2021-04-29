@@ -23,7 +23,7 @@ class EmployeeAttritionDemo extends Component {
                                     <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                                     <BreadcrumbItem href="/#/sales-demos">Sales Demos</BreadcrumbItem>
                                 </Breadcrumb>
-                                <h2 className="content-page__heading">Demo It: Employee Attrition</h2>
+                                <h2 className="content-page__heading">Demo: Employee Attrition</h2>
                             </div>
                         </div>
                         <div className="bx--row">

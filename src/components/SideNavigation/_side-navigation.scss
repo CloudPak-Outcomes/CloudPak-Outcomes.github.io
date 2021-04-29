@@ -16,11 +16,7 @@ a.bx--side-nav__link > .bx--side-nav__link-text:hover {
   color: $text-02;
 }
 
-.bx--side-nav__submenu-title:hover {
-  color: $ui-01;
-}
-
-button.bx--side-nav__submenu:hover {
+button.bx--side-nav__submenu:hover * {
   color: $ui-01;
 }
 

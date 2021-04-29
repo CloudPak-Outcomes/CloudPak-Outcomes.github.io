@@ -23,7 +23,7 @@ class EmployeeAttritionBuild extends Component {
                                     <BreadcrumbItem href="/#">Cloud Pak Outcomes</BreadcrumbItem>
                                     <BreadcrumbItem href="/#/technical-labs">Technical Labs</BreadcrumbItem>
                                 </Breadcrumb>
-                                <h2 className="content-page__heading">Build It: Employee Attrition</h2>
+                                <h2 className="content-page__heading">Lab: Employee Attrition</h2>
                             </div>
                         </div>
                         <div className="bx--row">
