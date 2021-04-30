@@ -64,11 +64,10 @@ class DemoPage extends Component {
 
     parseHeading({ children }) {
         const { sectionHeadings } = this.state;
-
         return (
             <div>
                 {children.map((child) => {
-                    const stringValue = child.props.value;
+                    const stringValue = child;
                     if (sectionHeadings.indexOf(stringValue) < 0) {
                         sectionHeadings.push(stringValue);
                         this.setState({ sectionHeadings });
@@ -82,6 +81,10 @@ class DemoPage extends Component {
                 })}
             </div>
         );
+    }
+
+    parseCode({children}) {
+        return <SyntaxHighlighter wrapLines={true} style={coldarkCold} children={children} />;
     }
 
     clickHandler(e) {
@@ -126,7 +129,7 @@ class DemoPage extends Component {
                             );
                         })};
                     </SideNavItems>
-                    <SideNavFooter>
+                    <SideNavFooter expanded={true}>
                     </SideNavFooter>
 
                 </SideNav>
@@ -145,13 +148,13 @@ class DemoPage extends Component {
                             <ReactMarkdown plugins={[gfm]}
                                            transformImageUri={uri => this.transformURI(uri)}
                                            children={this.state.markdown}
-                                           renderers={{
-                                               code: ({language, value}) => {
-                                                   return <SyntaxHighlighter wrapLines={true} style={coldarkCold} language={language} children={value} />
-                                               },
-                                               heading: (node) => {
+                                           components={{
+                                               h2: (node) => {
                                                    return this.parseHeading(node);
                                                },
+                                               code: (node) => {
+                                                   return this.parseCode(node);
+                                               }
                                            }}
                             />
                         </div>

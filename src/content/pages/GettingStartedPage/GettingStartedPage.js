@@ -19,7 +19,7 @@ const GettingStartedPage = () => {
                     <div className="bx--row">
                         <div className="bx--col">
                             <p>
-                                To begin, IBM sellers and business partners should <a href="" target="_blank">
+                                To begin, IBM sellers and business partners should <a href="https://assetrepo.ibm.com/" target="_blank">
                                 register for access</a> to a Cloud Pak for Data Outcomes cluster. Once you
                                 have registered, use the left-hand navigation to select between the different <a href="/#/sales-demos">sales demos</a> and <a href="/#/technical-labs">
                                 technical labs</a>, where you will find step-by-step instructions for your
