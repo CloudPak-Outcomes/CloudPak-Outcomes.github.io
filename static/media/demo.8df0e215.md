@@ -400,7 +400,7 @@ Select **Multiple fields**.
 
 Click **Add Columns**, then select the following columns: BONUS, VACATION\_DAYS\_TAKEN, SICK\_DAYS\_TAKEN, OVERTIME, and DBLOVERTIME. Click **OK**.
 
-Scroll down the **Derive** window and enter the floowing case-sensitive formula in the **Expression** field:
+Scroll down the **Derive** window and enter the following case-sensitive formula in the **Expression** field:
 ```
 @FIELD / PERIOD_TOTAL_DAYS
 ```
