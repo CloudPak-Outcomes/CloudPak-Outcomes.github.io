@@ -1,15 +1,16 @@
 @import "../../../index.scss";
 
 div.landing-page__banner {
-  background-image: url("../img/banner.png");
+  background-image: url("../img/cp4d-backgound.jpg");
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: 100% auto;
+  background-size: auto 100%;
 }
 
 h2.landing-page__heading {
-  padding-top: $spacing-07 * 7;
-  padding-bottom: $spacing-05;
+  padding-top: $spacing-07 * 2;
+  padding-bottom: $spacing-01;
   color: $text-04;
+  line-height: 1em;
   @include carbon--type-style('productive-heading-07');
 }
